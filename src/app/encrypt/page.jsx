@@ -1,5 +1,5 @@
 "use client";
-import { Lock } from "lucide-react";
+import { Lock, Copy } from "lucide-react";
 import { useState } from "react";
 import CryptoJS from "crypto-js";
 
@@ -96,7 +96,6 @@ const Encrypt = () => {
 
   const encryptMessage = () => {
     const ciphertext = CryptoJS.AES.encrypt(message, password).toString();
-    // const emojiCiphertext = stringToEmoji(ciphertext);
     setEncryptedMessage(ciphertext);
   };
 
@@ -129,10 +128,10 @@ const Encrypt = () => {
         <div className="mt-5">
           <p className="mb-3 text-gray-200 text-sm">3. Encrypt message</p>
           <button
-            className="bg-[#1c1c1c] px-8 py-4 rounded-lg  transition-all duration-200"
+            className="bg-[#1c1c1c] px-8 py-4 rounded-lg hover:text-red-500  transition-all duration-200"
             onClick={() => emojiMaker()}
           >
-            <span className="flex items-center gap-2 hover:text-red-500 transition-all duration-300">
+            <span className="flex items-center gap-2">
               <Lock />
               Encrypt
             </span>
@@ -148,6 +147,16 @@ const Encrypt = () => {
             className="bg-[#111111]  border-white rounded-md px-2 py-2 mt-2 border-2"
             value={encryptedMessage}
           ></textarea>
+          <br />
+          <button
+            className="bg-[#1c1c1c] px-8 py-4 rounded-lg hover:text-red-500  transition-all duration-200 mt-5"
+            onClick={() => navigator.clipboard.writeText(encryptedMessage)}
+          >
+            <span className="flex items-center gap-2">
+              <Copy />
+              Copy
+            </span>
+          </button>
         </div>
       </div>
     </>

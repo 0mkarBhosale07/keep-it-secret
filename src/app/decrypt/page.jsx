@@ -123,7 +123,7 @@ const Decrypt = () => {
   return (
     <>
       <div className="header text-center mt-10">
-        <h1 className="text-xl">Get your Emoji message!</h1>
+        <h1 className="text-xl">Get your secret message!</h1>
         <p className="text-sm text-red-700 mt-5">Decryption method</p>
       </div>
 
@@ -149,10 +149,10 @@ const Decrypt = () => {
         <div className="mt-5">
           <p className="mb-3 text-gray-200 text-sm">3. Decrypt message</p>
           <button
-            className="bg-[#1c1c1c] px-8 py-4 rounded-lg  transition-all duration-200"
+            className="bg-[#1c1c1c] px-8 py-4 rounded-lg hover:text-red-500  transition-all duration-200"
             onClick={() => txtMaker()}
           >
-            <span className="flex items-center gap-2 hover:text-red-500 transition-all duration-300">
+            <span className="flex items-center gap-2">
               <Unlock />
               Decrypt
             </span>
